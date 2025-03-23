@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+			rel="stylesheet"
+		/>
+		<link href="./style.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div id="main" class="h-[100%] w-full dark:bg-white1 bg-dark1 relative">
+			<div id="nav" class="nav">
+				<h2
+					id="logo"
+					class="font-shadow-hand custom-drop-shadow custom-drop-shadow-dark"
+				>
+				Doozy
+				</h2>
+				<div class="flex justify-center items-center gap-4 text-black1">
+					<i class="ri-refresh-line master-refresh text-red-400 custom-drop-shadow-red cursor-pointer hover:animate-[spin_1s_ease-in-out_1]"></i>
+					<div class="hover:animate-[spin_1s_ease-in-out_1]">
+						<i
+							id="toggleDark"
+							class="ri-moon-line toggleBtn custom-drop-shadow custom-drop-shadow-dark "
+						></i>
+						<i
+							id="toggleLight"
+							class="ri-sun-line hidden toggleBtn custom-drop-shadow custom-drop-shadow-dark"
+						></i>
+					</div>
+				</div>
+			</div>
+			<div
+				id="input-container"
+				class="h-[15vh] md:h-[30vh] w-full  flex justify-center flex-col items-center gap-8"
+			>	
+				<div id="container" class="input-box custom-drop-shadow custom-drop-shadow-dark ">
+					<input
+						id="taskInput"
+						maxlength="20"
+						type="text"
+						placeholder="Enter a task"
+						class="font-main w-[100%] outline-none p-2 sm:p-4 dark:text-white1 text-dark1 text-lg dark:caret-white1 caret-black1"
+					/>
+					<button id="add" class="addBtn">ADD</button></button>
+				</div>
+			</div>
+			<div id="content" class="content">
+				<div class=" w-full h-[25%] sm:h-[22%] flex justify-center items-center gap-4 group hover:blur-none ">
+						<button id="pendingBtn" class="statusPending">Pending</button>
+						<button id="completedBtn" class="statusCompleted">Completed</button>
+				</div>
+				<div id="dynamic-status-box "class="dynamic-status-box  sm:mt-[5%] mt-[10%]">
+					<div class="status-indicator custom-drop-shadow custom-drop-shadow-dark">
+						<div id="indicator-beam" class="indicator-beam" data-set="pending"><div class="in-beam"></div></div>
+						<div id="indicator-text"class="indicator-text dark:text-white1 text-dark1">Pending</div>
+					</div>
+					<div class="status-container  dark:bg-white1 bg-dark1 custom-drop-shadow custom-drop-shadow-dark">
+						<div id="grid-card-container" class="grid-container">
+						<!-- Cards -->
+						</div>
+						<div class="completed-container hidden">
+							<span></span>
+							<!-- Completed tasks  -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="refresh-window w-full h-full bg-[rgba(0,0,0,0.5)] absolute top-0 left-0  justify-center items-center hidden ">
+					<div class="confirmation-window ">
+						<span class="w-full">
+							<i class="ri-error-warning-line text-red-400 custom-drop-shadow-red text-[4rem] "></i>
+						</span>
+						<span class="text-dark1 text-[min(1.5rem,4vw)] drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)] font-main">Are you sure you want to clear all tasks ??</span>
+						<span class="flex justify-center items-center gap-5">
+							<button class="cancel addBtn py-4  custom-drop-shadow-red ">No</button>
+							<button class="confirm addBtn py-4 custom-drop-shadow-green">Yes</button>
+						</span>
+					</div>
+			</div>
+			<footer class="w-full h-[10vh] flex justify-evenly items-center p-5">
+				<p class="text-sm text-white1 dark:text-dark1">Copyright &copy; Sudeep S Joshi. All rights reserved.</p>
+				<div class="icons flex justify-around items-center gap-4">
+					<a href="https://github.com/Sudeep9845">
+						<i class="ri-github-fill cursor-pointer text-white1 dark:text-dark1 custom-drop-shadow custom-drop-shadow-dark"></i>
+					</a>
+					<a href="https://www.linkedin.com/in/sudeep-s-joshi-817942354/">
+						<i class="ri-linkedin-fill cursor-pointer text-white1 dark:text-dark1 custom-drop-shadow custom-drop-shadow-dark"></i>
+					</a>
+					<!-- <i class="ri-instagram-fill cursor-pointer text-white1 dark:text-dark1 custom-drop-shadow custom-drop-shadow-dark"></i> -->
+				</div>
+			</footer>
+		</div>
+		
+		<script src="./script.js"></script>
+	</body>
+</html>

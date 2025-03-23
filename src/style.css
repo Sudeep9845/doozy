@@ -1,0 +1,354 @@
+@import url("https://fonts.googleapis.com/css2?family=Boldonse&family=Bytesized&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Space+Grotesk:wght@300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+/* @import "tailwindcss/components";
+@import "tailwindcss/utilities"; */
+
+html,
+body {
+	height: max-content;
+	width: 100%;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+	display: none;
+}
+:root {
+	--color-rgb-red: rgb(255, 75, 75);
+	--color-rgb-green: rgb(98, 255, 95);
+	--color-rgb-orange: rgb(255, 226, 95);
+	--color-dark-red: rgb(255, 34, 34);
+	--color-dark-orange: rgb(255, 81, 33);
+	--color-dark-green: rgb(78, 255, 34);
+	--color-transparent: transparent;
+	/* --color-black: #000; */
+}
+@theme {
+	--color-white1: #fafafa;
+	--color-dark1: #060606;
+	--color-gray1: #9ca3af;
+	--color-green1: #22c55e;
+
+	/* --font-main-font: "ShadowHand"; */
+	--font-main: "Boldonse", sans-serif;
+	/* --font-logo: "ShadowHand";" */
+	/* --font-main: "Quicksand", sans-serif; */
+	/* --drop-shadow-4xl: drop-shadow(2px 2px 4px rgb(0, 0, 0)); */
+}
+
+/* .custom-drop-shadow {
+	filter: drop-shadow(2px 2px 4px var(--color-white1));
+} */
+@layer base {
+	@font-face {
+		font-family: "ShadowHand";
+		src: url("/assets/ShadowHand.otf") format("opentype");
+	}
+}
+@layer utilities {
+	.custom-drop-shadow {
+		filter: drop-shadow(2px 2px 4px var(--color-white1));
+	}
+	.custom-drop-shadow-green {
+		filter: drop-shadow(2px 2px 4px var(--color-green1));
+	}
+	.custom-drop-shadow-red {
+		filter: drop-shadow(2px 2px 4px var(--color-dark-red));
+	}
+	.dark .custom-drop-shadow-dark {
+		filter: drop-shadow(2px 2px 4px var(--color-dark1));
+	}
+	.hidden {
+		display: none;
+	}
+	.font-shadow-hand {
+		font-family: "ShadowHand";
+	}
+}
+
+@layer components {
+	.nav {
+		@apply min-h-[9vh] md:h-[6vw] w-full dark:bg-white1 bg-dark1  flex justify-between items-center text-4xl text-white1 px-4 py-3;
+		/* padding: 4vw; */
+		/* filter: drop-shadow(0 4px 4px rgba(255, 255, 255, 0.929)); */
+	}
+	.toggleBtn {
+		@apply text-white1 dark:text-dark1 cursor-pointer active:scale-[1.2] ease-in-out duration-300;
+	}
+	#logo {
+		@apply select-none text-white1 dark:text-dark1 pt-2;
+	}
+	.input-box {
+		@apply dark:bg-dark1 bg-white1  w-[90%] sm:w-[60%] sm:h-[30%] inline-flex rounded-lg overflow-hidden dark:selection:bg-gray1 selection:bg-gray1;
+	}
+	.addBtn {
+		@apply bg-dark1 dark:bg-white1 text-white1 dark:text-dark1  w-fit px-[4vw] text-center rounded-lg font-main tracking-[3px] active:scale-[0.95] ease-in-out duration-300 cursor-pointer hover:tracking-[6px];
+	}
+
+	.content {
+		@apply h-fit w-full py-[2vw] px-[2vw] sm:px-[3vw] sm:py-[3vw] pt-0 sm:pt-0 mt-10 sm:mt-0;
+	}
+	/* input-bar */
+
+	.statusPending {
+		@apply bg-yellow-200  text-dark1 w-fit px-[2vw] py-[1vw] text-sm sm:text-base text-center 
+		rounded-lg font-main tracking-[1px] sm:tracking-[3px] active:scale-[0.95] ease-in-out duration-300 
+		cursor-pointer sm:hover:tracking-[5px] hover:tracking-[6px] group-hover:blur-sm hover:blur-none
+		dark:bg-amber-300  dark:text-white1 shadow-yellow-200 shadow-md;
+	}
+
+	.statusCompleted {
+		@apply bg-green-300 text-dark1 w-fit px-[2vw] py-[1vw] text-sm sm:text-base text-center 
+		rounded-lg font-main tracking-[1px] sm:tracking-[3px] active:scale-[0.95] ease-in-out duration-300 
+		cursor-pointer sm:hover:tracking-[5px] hover:tracking-[6px] group-hover:blur-sm hover:blur-none
+		dark:bg-green-500  dark:text-white1 shadow-green-400 shadow-md;
+	}
+
+	/* i buttons inside .buttons --card   */
+	.i-btn {
+		@apply text-[min(80px,40px)] py-0.5 px-2 sm:px-6 md:px-8  bg-dark1 dark:bg-white1 rounded-[10px]  active:scale-[0.95] cursor-pointer hover:shadow-md hover:shadow-dark1  ease-in-out duration-300;
+		/* 2xl:px-38 xl:px-30 lg:px-22 md:px-15 px-3 sm:px-7 */
+	}
+	.bg-text-gradient1 {
+		@apply bg-clip-text text-transparent bg-gradient-to-br from-red-600 to-violet-500 via-25% via-red-400 
+		/* bg-gradient-to-bl from-zinc-800 to-white via-red-400; */;
+	}
+	.task-word {
+		@apply text-[min(7vw,2rem)] font-main text-transparent  stroke-red-400 bg-clip-text;
+	}
+
+	.input-task {
+		@apply pr-2 text-[min(5vw,1.5rem)] font-main text-white1 dark:text-dark1  z-2;
+	}
+	.date-word {
+		@apply text-[min(4vw,1.2rem)] font-main text-transparent  stroke-red-400 bg-clip-text;
+	}
+	.input-date {
+		@apply text-[min(3.5vw,1.2rem)] font-main text-white1 dark:text-dark1 z-2;
+	}
+	.confirmation-window {
+		@apply w-[90%] h-[40%] sm:w-[70%] sm:h-[40%]  p-4  bg-white1  rounded-lg flex flex-col justify-evenly items-center gap-5 text-center transition-all ease-in-out duration-500;
+	}
+}
+#dynamic-status-box {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	transition: all 500ms ease-in-out;
+}
+.status-indicator {
+	position: relative;
+	width: 200px;
+	height: 100%;
+	/* background-color: #eceaea; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	justify-self: flex-end;
+	background-color: var(--color-white1);
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+.dark .status-indicator {
+	background-color: var(--color-dark1);
+}
+.status-indicator:before {
+	content: "";
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	bottom: 0;
+	left: -20px;
+	background-color: transparent;
+	border-radius: 50%;
+	box-shadow: 10px 10px 0 var(--color-white1);
+}
+.dark .status-indicator:before {
+	box-shadow: 10px 10px 0 var(--color-dark1);
+}
+.indicator-beam {
+	width: 12px;
+	height: 12px;
+	background-color: var(--color-transparent);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	border-radius: 50%;
+	box-shadow: 0 0 25px var(--color-dark-orange);
+}
+.indicator-beam .in-beam {
+	content: "";
+	width: 8px;
+	height: 8px;
+	background-color: var(--color-dark-orange);
+	position: absolute;
+	border-radius: 50%;
+	box-shadow: 0 0 25px var(--color-dark-orange);
+	filter: blur(1px);
+}
+.indicator-text {
+	font-family: var(--font-main);
+	padding: 10px;
+}
+.status-container {
+	padding: 10px;
+	width: 100%;
+	height: 100%;
+	/* background: #eceaea; */
+	background-color: var(--color-white1);
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+.dark .status-container {
+	background-color: var(--color-dark1);
+}
+.grid-container,
+.completed-container {
+	width: 100%;
+	height: 100%;
+	/* background: red; */
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
+	position: relative;
+	justify-content: space-around;
+	align-items: center;
+	/* gap: 25px; */
+	column-gap: 25px;
+	row-gap: 25px;
+}
+.completed-container {
+	display: none;
+}
+.grid-container .card,
+.completed-container .card {
+	/* background-color: blue; */
+	/* width: fit-content; */
+	position: relative;
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr;
+	grid-template-rows: 1fr 2fr 1fr;
+	/* gap: 10px; */
+}
+.card .indexNum,
+.completed-container .indexNum {
+	padding: 10px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--color-dark1);
+	border-top-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	transition: all 500ms ease-in-out;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	border-radius: 10px;
+}
+.indexNum .index,
+.completed-container .indexNum .index {
+	width: 100%;
+	height: 100%;
+	border-radius: calc(10px / 2);
+	display: grid;
+	place-content: center;
+	font-size: 1.5rem;
+	font-weight: 600;
+	font-family: var(--font-main);
+	color: var(--color-dark1);
+	background-color: var(--color-white1);
+}
+.dark .index,
+.dark .completed-container .indexNum .index {
+	color: var(--color-white1);
+	background-color: var(--color-dark1);
+}
+.dark .indexNum,
+.dark .completed-container .indexNum {
+	background-color: var(--color-white1);
+}
+.card .indexNum::before,
+.completed-container .indexNum::before {
+	content: "";
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	bottom: -10px;
+	right: -10px;
+	border-radius: 50%;
+	background-color: var(--color-transparent);
+	box-shadow: 10px 10px 0 var(--color-dark1);
+}
+.dark .indexNum::before,
+.dark .completed-container .indexNum::before {
+	box-shadow: 10px 10px 0 var(--color-white1);
+}
+.card .task,
+.completed-container .task {
+	position: relative;
+	background-color: var(--color-dark1);
+	border-top-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	grid-area: 2 / 1 / 3 / 4;
+}
+.dark .task,
+.dark .completed-container .task {
+	background-color: var(--color-white1);
+}
+.card .extension1,
+.completed-container .extension1 {
+	background-color: var(--color-dark1);
+	grid-area: 3 / 1 / 3 / 2;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+.dark .extension1,
+.dark .completed-container .extension1 {
+	background-color: var(--color-white1);
+}
+.card .buttons,
+.completed-container .buttons {
+	position: relative;
+	background-color: var(--color-white1);
+	grid-area: 3 / 2 / 4 / 4;
+	margin-top: 10px;
+	margin-left: 10px;
+	border-radius: 10px;
+}
+.dark .buttons,
+.dark .completed-container .buttons {
+	background-color: var(--color-dark1);
+}
+.card .buttons::before,
+.completed-container .buttons::before {
+	content: "";
+	z-index: -1;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	top: -10px;
+	left: -10px;
+	border-radius: 50%;
+	background-color: var(--color-transparent);
+	box-shadow: -10px -10px 0 var(--color-dark1);
+}
+.dark .buttons::before,
+.dark .completed-container .buttons::before {
+	box-shadow: -10px -10px 0 var(--color-white1);
+}
+.card .card-date,
+.completed-container .card-date {
+	background-color: var(--color-dark1);
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	grid-area: 1 / 2 / 1 / 4;
+}
+.dark .card-date,
+.dark .completed-container .card-date {
+	background-color: var(--color-white1);
+}
