@@ -49,7 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
 			.slice()
 			.reverse()
 			.forEach((task, idx) => {
-				const originalIndex = tasks.findIndex((t) => t.id === task.id);
 				taskDisplayContent += `<div class="card text-white  sm:h-[300px]" id="${
 					task.id
 				}">
