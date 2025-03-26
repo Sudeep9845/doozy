@@ -49,7 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
 			.slice()
 			.reverse()
 			.forEach((task, idx) => {
-				const originalIndex = tasks.findIndex((t) => t.id === task.id);
 				taskDisplayContent += `<div class="card text-white  sm:h-[300px]" id="${
 					task.id
 				}">
@@ -284,60 +283,4 @@ document.addEventListener("DOMContentLoaded", () => {
 		completedDisplay.style.display = "none";
 		taskDisplay.style.transition = "1s ease-in-out";
 	});
-	// function adjustFontSize() {
-	// 	const cards = document.querySelectorAll(".card");
-	// 	const taskText = document.querySelectorAll(".task-word");
-	// 	const dateText = document.querySelectorAll(".date-word");
-	// 	const inputText = document.querySelectorAll(".input-task");
-	// 	const inputDate = document.querySelectorAll(".input-date");
-
-	// 	// 	".task-word, .input-task, .date-word, .input-date"
-	// 	// );
-
-	// 	cards.forEach((card) => {
-	// 		if (window.innerWidth < 640) {
-	// 			taskText.forEach((text) => {
-	// 				text.style.fontSize = "1.5rem";
-	// 			});
-	// 			dateText.forEach((text) => {
-	// 				text.style.fontSize = ".8rem";
-	// 			});
-	// 			inputText.forEach((text) => {
-	// 				text.style.fontSize = "1.5rem";
-	// 			});
-	// 			inputDate.forEach((text) => {
-	// 				text.style.fontSize = ".8rem";
-	// 			});
-	// 		} else if (window.innerWidth < 1024) {
-	// 			taskText.forEach((text) => {
-	// 				text.style.fontSize = "2rem";
-	// 			});
-	// 			dateText.forEach((text) => {
-	// 				text.style.fontSize = "1.5rem";
-	// 			});
-	// 			inputText.forEach((text) => {
-	// 				text.style.fontSize = "2rem";
-	// 			});
-	// 			inputDate.forEach((text) => {
-	// 				text.style.fontSize = "1.5rem";
-	// 			});
-	// 		} else {
-	// 			taskText.forEach((text) => {
-	// 				text.style.fontSize = "2.5rem";
-	// 			});
-	// 			dateText.forEach((text) => {
-	// 				text.style.fontSize = "1.5rem";
-	// 			});
-	// 			inputText.forEach((text) => {
-	// 				text.style.fontSize = "2rem";
-	// 			});
-	// 			inputDate.forEach((text) => {
-	// 				text.style.fontSize = "1.5rem";
-	// 			});
-	// 		}
-	// 	});
-	// }
-
-	// window.addEventListener("resize", adjustFontSize);
-	// adjustFontSize();
 });
